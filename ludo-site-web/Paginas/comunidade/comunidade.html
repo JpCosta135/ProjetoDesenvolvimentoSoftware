@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../Asset/logos/logo.ico" type="image/x-icon">
+    <title>Gerenciar Comunidades - Sistema Esportivo</title>
+    <link rel="stylesheet" href="comunidade.css">
+    <link rel="stylesheet" href="../../theme.css">
+    <script src="../../theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button class="back-btn" onclick="voltarPagina()">← Voltar</button>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Comunidade</h1>
+            <p>Participe de eventos e junte-se a comunidade de atletas!</p>
+        </div>
+        
+        <div class="user-info" id="userInfo" style="display: none;">
+            <span id="welcomeMessage"></span>
+            <button class="logout-btn" onclick="logout()">Sair</button>
+        </div>
+        
+        <div class="login-prompt" id="loginPrompt">
+            <h3>🔐 Faça login para gerenciar times</h3>
+            <button class="login-btn" onclick="redirectToLogin()">Fazer Login</button>
+        </div>
+        
+        <div class="main-content" id="mainContent" style="display: none;">
+            <div class="add-team-section">
+                <h2>➕ Adicionar Novo Time</h2>
+                <form class="team-form" id="teamForm">
+                    <div class="form-row">
+                        <input type="text" id="teamName" placeholder="Nome do Time" required>
+                        <select id="teamSport" required>
+                            <option value="">Selecione a Modalidade</option>
+                            <option value="futebol">⚽ Futebol</option>
+                            <option value="basquete">🏀 Basquete</option>
+                            <option value="volei">🏐 Vôlei</option>
+                            <option value="futsal">🥅 Futsal</option>
+                            <option value="handebol">🤾 Handebol</option>
+                            <option value="natacao">🏊 Natação</option>
+                            <option value="atletismo">🏃 Atletismo</option>
+                            <option value="tenis">🎾 Tênis</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" id="teamCategory" placeholder="Categoria (Ex: Sub-15, Adulto)" required>
+                        <input type="number" id="maxPlayers" placeholder="Máx. Jogadores" min="5" max="30" required>
+                    </div>
+                    <textarea id="teamDescription" placeholder="Descrição do time (opcional)" rows="3"></textarea>
+                    <button type="submit" class="add-btn">Criar Time</button>
+                </form>
+            </div>
+            
+            <div class="teams-section">
+                <div class="section-header">
+                    <h2>🏆 Meus Times</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="todos">Todos</button>
+                        <button class="filter-btn" data-filter="futebol">Futebol</button>
+                        <button class="filter-btn" data-filter="basquete">Basquete</button>
+                        <button class="filter-btn" data-filter="volei">Vôlei</button>
+                        <button class="filter-btn" data-filter="outros">Outros</button>
+                    </div>
+                </div>
+                
+                <div class="teams-grid" id="teamsGrid">
+                    <!-- Times serão carregados aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para adicionar jogadores -->
+    <div class="modal" id="playersModal">
+        <div class="modal-content">
+            <span class="close" onclick="closePlayersModal()">&times;</span>
+            <h3>👥 Gerenciar Jogadores</h3>
+            <div class="modal-body">
+                <div class="add-player-form">
+                    <input type="text" id="playerName" placeholder="Nome do Jogador">
+                    <input type="text" id="playerPosition" placeholder="Posição">
+                    <button onclick="addPlayer()">Adicionar</button>
+                </div>
+                <div class="players-list" id="playersList">
+                    <!-- Lista de jogadores -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="comunidade.js"></script>
+</body>
+</html>

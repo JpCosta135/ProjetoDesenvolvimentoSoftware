@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b7444" id="themeColorMeta">
+  <link rel="shortcut icon" href="assets/logo.ico" type="image/x-icon">
+  <title>Ludo — Esporte perto de você</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/mobile.css">
+  <script src="js/theme.js"></script>
+</head>
+<body class="auth-locked">
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5Z"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M5 3v3M19 3v3M3 9h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M7 13h3M14 13h3M7 17h3"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></symbol>
+    <symbol id="i-tune" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3Z"/><path d="M9 3v15M15 6v15"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V4h11v17M15 9h5v12M8 8h3M8 12h3M8 16h3M18 13v3"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="m8.5 12-1 9 4.5-2 4.5 2-1-9"/></symbol>
+    <symbol id="i-log-out" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/></symbol>
+  </svg>
+
+  <section class="auth-screen" id="authScreen" aria-labelledby="auth-title">
+    <div class="auth-card">
+      <button class="icon-button theme-toggle auth-theme" type="button" data-theme-toggle aria-label="Ativar modo escuro">🌙</button>
+      <img class="auth-logo" src="assets/logos/nome-ludo-lateral-corte-menor.png" alt="Ludo">
+      <p class="eyebrow">Esporte perto de você</p>
+      <h1 id="auth-title">Entre para jogar, treinar e conectar.</h1>
+
+      <div class="auth-tabs" role="tablist" aria-label="Acesso">
+        <button type="button" role="tab" class="active" aria-selected="true" data-auth-tab="login">Entrar</button>
+        <button type="button" role="tab" aria-selected="false" data-auth-tab="register">Cadastrar</button>
+      </div>
+
+      <div class="auth-message" id="authMessage" role="alert" hidden></div>
+
+      <form class="publish-form auth-form active" data-auth-form="login" novalidate>
+        <label class="field-label">E-mail
+          <input type="email" name="email" placeholder="voce@email.com" autocomplete="email" required>
+        </label>
+        <label class="field-label">CPF
+          <input type="text" name="cpf" inputmode="numeric" placeholder="Somente números" autocomplete="off" required>
+        </label>
+        <button class="form-submit" type="submit">Entrar</button>
+        <p class="auth-help">Não tem conta? <button type="button" data-auth-tab="register">Cadastre-se</button></p>
+      </form>
+
+      <div class="auth-form" data-auth-form="register">
+        <div id="registerRoles">
+          <span class="sheet-kicker">Como você vai usar a Ludo?</span>
+          <p class="sheet-description">Cada perfil tem um cadastro e recursos próprios.</p>
+          <button class="role-card" type="button" data-register-role="praticante">
+            <span class="role-icon"><svg><use href="#i-user"></use></svg></span>
+            <span><strong>Praticante</strong><small>Encontre espaços, eventos e educadores físicos.</small></span>
+            <svg><use href="#i-chevron"></use></svg>
+          </button>
+          <button class="role-card" type="button" data-register-role="proprietario">
+            <span class="role-icon blue"><svg><use href="#i-building"></use></svg></span>
+            <span><strong>Proprietário de espaço</strong><small>Cadastre espaços, horários e gerencie reservas.</small></span>
+            <svg><use href="#i-chevron"></use></svg>
+          </button>
+          <button class="role-card" type="button" data-register-role="educador">
+            <span class="role-icon"><svg><use href="#i-award"></use></svg></span>
+            <span><strong>Educador físico</strong><small>Divulgue seu CREF, aulas e receba novos alunos.</small></span>
+            <svg><use href="#i-chevron"></use></svg>
+          </button>
+        </div>
+        <div id="registerFormHost" hidden></div>
+        <p class="auth-help">Já tem conta? <button type="button" data-auth-tab="login">Entrar</button></p>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <div class="app-shell">
+    <header class="app-topbar">
+      <a href="../index.html" class="brand" aria-label="Voltar ao site Ludo">
+        <img src="assets/logos/nome-ludo-lateral-corte-menor.png" alt="Ludo">
+      </a>
+      <button class="location-trigger" type="button" data-open-sheet="location">
+        <span>Sua localização</span>
+        <strong><svg><use href="#i-location"></use></svg> Fortaleza, CE</strong>
+      </button>
+      <button class="icon-button theme-toggle" id="themeBtn" type="button" data-theme-toggle aria-label="Ativar modo escuro">🌙</button>
+      <button class="icon-button notification-button" type="button" aria-label="Notificações" data-toast="Você não tem novas notificações">
+        <svg><use href="#i-bell"></use></svg><span></span>
+      </button>
+    </header>
+
+    <main class="app-main">
+      <section class="app-view active" data-view="home" aria-labelledby="home-title">
+        <div class="home-intro">
+          <p class="eyebrow" id="homeGreeting">Olá, Maria</p>
+          <h1 id="home-title">Qual esporte vai mover você hoje?</h1>
+          <label class="search-field">
+            <svg><use href="#i-search"></use></svg>
+            <input type="search" id="homeSearch" placeholder="Busque esporte, local ou evento" autocomplete="off">
+          </label>
+        </div>
+
+        <article class="hero-card">
+          <img src="assets/images/futebol-comunidade.jpg" alt="Pessoas jogando bola na praia">
+          <div class="hero-overlay"></div>
+          <div class="hero-copy">
+            <span class="hero-tag">Perto de você</span>
+            <h2>Seu próximo jogo começa aqui.</h2>
+            <p>Encontre espaços, turmas e pessoas para praticar.</p>
+            <button class="light-button" type="button" data-nav-target="explore">
+              Explorar agora <svg><use href="#i-arrow"></use></svg>
+            </button>
+          </div>
+        </article>
+
+        <div class="section-heading">
+          <div><span class="overline">Descobrir</span><h2>Modalidades</h2></div>
+          <button type="button" data-nav-target="explore">Ver todas</button>
+        </div>
+        <div class="sport-scroller" aria-label="Modalidades">
+          <button class="sport-pill active" type="button" data-sport="Todos"><span class="sport-mark">T</span>Todos</button>
+          <button class="sport-pill" type="button" data-sport="Futebol"><span class="sport-mark">F</span>Futebol</button>
+          <button class="sport-pill" type="button" data-sport="Vôlei"><span class="sport-mark">V</span>Vôlei</button>
+          <button class="sport-pill" type="button" data-sport="Corrida"><span class="sport-mark">C</span>Corrida</button>
+          <button class="sport-pill" type="button" data-sport="Basquete"><span class="sport-mark">B</span>Basquete</button>
+        </div>
+
+        <div class="section-heading">
+          <div><span class="overline">Agenda local</span><h2>Eventos em destaque</h2></div>
+          <button type="button" data-nav-target="explore">Ver mapa</button>
+        </div>
+        <div class="event-scroller" id="homeEvents"></div>
+
+        <section class="professional-banner">
+          <div class="professional-icon"><svg><use href="#i-award"></use></svg></div>
+          <div>
+            <span class="overline">Orientação segura</span>
+            <h2>Encontre um profissional</h2>
+            <p>Educadores avaliados por modalidade e região.</p>
+          </div>
+          <button type="button" data-open-sheet="professional" aria-label="Ver profissionais"><svg><use href="#i-chevron"></use></svg></button>
+        </section>
+      </section>
+
+      <section class="app-view" data-view="explore" aria-labelledby="explore-title">
+        <div class="view-header">
+          <div><span class="overline">Fortaleza, CE</span><h1 id="explore-title">Explore perto de você</h1></div>
+          <button class="icon-button" type="button" data-open-sheet="filters" aria-label="Abrir filtros"><svg><use href="#i-tune"></use></svg></button>
+        </div>
+        <label class="search-field compact">
+          <svg><use href="#i-search"></use></svg>
+          <input type="search" id="exploreSearch" placeholder="Modalidade, bairro ou espaço">
+        </label>
+        <div class="filter-scroller">
+          <button class="filter-chip active" type="button" data-filter="Todos">Todos</button>
+          <button class="filter-chip" type="button" data-filter="Evento">Eventos</button>
+          <button class="filter-chip" type="button" data-filter="Espaço">Espaços</button>
+          <button class="filter-chip" type="button" data-filter="Profissional">Profissionais</button>
+        </div>
+        <div class="map-preview" aria-label="Mapa ilustrativo de locais próximos">
+          <div class="map-road road-one"></div><div class="map-road road-two"></div><div class="map-road road-three"></div>
+          <div class="map-water"></div>
+          <button class="map-pin pin-one active" type="button" data-event-id="1"><span>F</span></button>
+          <button class="map-pin pin-two" type="button" data-event-id="2"><span>V</span></button>
+          <button class="map-pin pin-three" type="button" data-event-id="3"><span>C</span></button>
+          <button class="map-expand" type="button" data-toast="Mapa ampliado no protótipo"><svg><use href="#i-map"></use></svg> Ampliar mapa</button>
+        </div>
+        <div class="results-summary"><strong id="resultCount">6 resultados</strong><span>até 8 km de você</span></div>
+        <div class="result-list" id="exploreResults"></div>
+      </section>
+
+      <section class="app-view" data-view="agenda" aria-labelledby="agenda-title">
+        <div class="view-header">
+          <div><span class="overline">Seus planos</span><h1 id="agenda-title">Agenda</h1></div>
+          <button class="icon-button" type="button" data-toast="Calendário sincronizado" aria-label="Sincronizar calendário"><svg><use href="#i-calendar"></use></svg></button>
+        </div>
+        <div class="date-strip">
+          <button type="button"><span>TER</span><strong>17</strong></button>
+          <button class="active" type="button"><span>QUA</span><strong>18</strong></button>
+          <button type="button"><span>QUI</span><strong>19</strong></button>
+          <button type="button"><span>SEX</span><strong>20</strong></button>
+          <button type="button"><span>SÁB</span><strong>21</strong></button>
+        </div>
+        <section class="agenda-card">
+          <div class="agenda-time"><strong>18:30</strong><span>20:00</span></div>
+          <div class="agenda-line"></div>
+          <div class="agenda-content">
+            <span class="status confirmed">Presença confirmada</span>
+            <h2>Futebol na Areninha</h2>
+            <p><svg><use href="#i-location"></use></svg> Areninha Campo do América</p>
+            <div class="attendees"><span>MA</span><span>JL</span><span>RC</span><strong>+9 pessoas</strong></div>
+            <button class="secondary-button" type="button" data-event-id="1">Ver detalhes</button>
+          </div>
+        </section>
+        <section class="empty-agenda" id="reservationCard">
+          <div><svg><use href="#i-calendar"></use></svg></div>
+          <h2>Planeje sua próxima atividade</h2>
+          <p>Reserve um espaço ou confirme presença em um evento perto de você.</p>
+          <button class="primary-button" type="button" data-nav-target="explore">Encontrar atividade</button>
+        </section>
+      </section>
+
+      <section class="app-view" data-view="profile" aria-labelledby="profile-title">
+        <div class="profile-hero">
+          <div class="profile-avatar" id="profileAvatar">MS</div>
+          <div><span class="overline" id="profileRole">Perfil praticante</span><h1 id="profile-title">Maria Santos</h1><p>Fortaleza, CE</p></div>
+          <button class="text-button" type="button" data-toast="Edição de perfil disponível no protótipo">Editar</button>
+        </div>
+        <div class="profile-stats" id="profileStats">
+          <div><strong>8</strong><span>eventos</span></div>
+          <div><strong>3</strong><span>modalidades</span></div>
+          <div><strong>12</strong><span>conexões</span></div>
+        </div>
+        <section class="role-panel" id="profileDetails"></section>
+        <div class="settings-list">
+          <button type="button" data-toast="Preferências de notificação abertas"><svg><use href="#i-bell"></use></svg><span>Notificações</span><svg><use href="#i-chevron"></use></svg></button>
+          <button type="button" data-toast="Seus favoritos estão disponíveis"><svg><use href="#i-heart"></use></svg><span>Favoritos</span><svg><use href="#i-chevron"></use></svg></button>
+          <a href="../index.html"><svg><use href="#i-log-out"></use></svg><span>Voltar ao site web</span><svg><use href="#i-chevron"></use></svg></a>
+          <button type="button" data-theme-toggle><span class="theme-emoji" data-theme-emoji>🌙</span><span data-theme-text>Modo escuro</span><svg><use href="#i-chevron"></use></svg></button>
+          <button type="button" data-logout><svg><use href="#i-log-out"></use></svg><span>Sair da conta</span><svg><use href="#i-chevron"></use></svg></button>
+        </div>
+      </section>
+      <section class="app-view" data-view="owner-home"></section>
+      <section class="app-view" data-view="owner-spaces"></section>
+      <section class="app-view" data-view="owner-bookings"></section>
+      <section class="app-view" data-view="pro-home"></section>
+      <section class="app-view" data-view="pro-students"></section>
+      <section class="app-view" data-view="pro-classes"></section>
+    </main>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="Navegação principal"></nav>
+  </div>
+
+  <div class="sheet-backdrop" id="sheetBackdrop"></div>
+  <aside class="bottom-sheet" id="detailSheet" aria-hidden="true" aria-labelledby="detailTitle">
+    <button class="sheet-close" type="button" data-close-sheet aria-label="Fechar"><svg><use href="#i-close"></use></svg></button>
+    <div id="sheetContent"></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><svg><use href="#i-check"></use></svg><span></span></div>
+  <script src="js/mobile.js"></script>
+</body>
+</html>

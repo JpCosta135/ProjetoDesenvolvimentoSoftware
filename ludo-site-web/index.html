@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Asset/logos/logo.ico" type="image/x-icon">
+    <title>Sistema de Gestão Esportiva - Fortaleza</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+    <script src="theme.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="app-header">
+        <img src="Asset/logos/nome-ludo-lateral-corte-menor.png" alt="Logo" class="header-logo">
+        <nav>
+            <a href="#catalogo">Modalidades</a>
+            <a href="#equipamentos">Espaços</a>
+            <a href="#mapa">Mapa</a>
+            <a href="Paginas/eventos/eventos.html">Eventos</a>
+            <a href="Paginas/comunidade/comunidade.html">Comunidade</a>
+            <a href="mobile.html">App mobile</a>
+        </nav>
+        <div class="header-controls">
+            <button class="theme-button" onclick="toggleTheme()" id="themeBtn" aria-label="Alternar modo escuro" title="Alternar modo escuro">🌙</button>
+            <div class="auth-buttons">
+                <button class="login-button" onclick="window.location.href='Paginas/login/login.html'">Login</button>
+                <button class="register-button" onclick="window.location.href='Paginas/registro/registro.html'">Cadastro</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner-container">
+        <div class="banner-content">
+            <h3>ESPORTE E MOVIMENTO</h3>
+            <h1>SISTEMA DE GESTÃO ESPORTIVA</h1>
+        </div>
+    </section>
+
+    <main class="content-container" id="catalogo">
+        <h2>Destaques Esportivos</h2>
+        
+        <!-- Filtros -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="Modalidade">Modalidades</button>
+            <button class="filter-btn" data-filter="Equipamento Público">Espaços</button>
+            <button class="filter-btn" data-filter="Evento">Eventos</button>
+        </div>
+        
+        <div class="card-grid">
+        </div>
+    </main>
+
+    <!-- Seção do Mapa -->
+    <section class="map-section" id="mapa">
+        <div class="content-container">
+            <h2>🗺️ Locais para Prática Esportiva</h2>
+            <p>Encontre os melhores equipamentos esportivos de Fortaleza</p>
+            
+            <div class="map-filters">
+                <button class="map-filter-btn active" data-type="todos">Todos</button>
+                <button class="map-filter-btn" data-type="quadra">Quadras</button>
+                <button class="map-filter-btn" data-type="campo">Campos</button>
+                <button class="map-filter-btn" data-type="piscina">Piscinas</button>
+                <button class="map-filter-btn" data-type="academia">Academias</button>
+            </div>
+            
+            <div class="map-container">
+                <div id="mapa-interativo">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253840.65647175406!2d-38.68551!3d-3.71722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c748c0d80e2b4b%3A0x7b1b1b1b1b1b1b1b!2sFortaleza%2C%20CE!5e0!3m2!1spt-BR!2sbr!4v1642000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;border-radius:10px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <div class="locations-list">
+                    <div class="location-card" data-type="quadra">
+                        <div class="location-icon">🏀</div>
+                        <div class="location-info">
+                            <h4>Quadra Poliesportiva Aldeota</h4>
+                            <p>📍 Av. Santos Dumont, 1510 - Aldeota</p>
+                            <span class="location-type">Quadra Poliesportiva</span>
+                        </div>
+                    </div>
+                    
+                    <div class="location-card" data-type="campo">
+                        <div class="location-icon">⚽</div>
+                        <div class="location-info">
+                            <h4>Campo de Futebol Castelão</h4>
+                            <p>📍Av. Alberto Craveiro, 2901 - Castelão</p>
+                            <span class="location-type">Campo de Futebol</span>
+                        </div>
+                    </div>
+                    
+                    <div class="location-card" data-type="piscina">
+                        <div class="location-icon">🏊</div>
+                        <div class="location-info">
+                            <h4>Centro Aquático Meireles</h4>
+                            <p>📍 Av. Beira Mar, 3200 - Meireles</p>
+                            <span class="location-type">Centro Aquático</span>
+                        </div>
+                    </div>
+                    
+                    <div class="location-card" data-type="academia">
+                        <div class="location-icon">💪</div>
+                        <div class="location-info">
+                            <h4>Academia ao Ar Livre Iracema</h4>
+                            <p>📍 Av. Beira Mar, 1782 - Meireles</p>
+                            <span class="location-type">Academia Pública</span>
+                        </div>
+                    </div>
+                    
+                    <div class="location-card" data-type="quadra">
+                        <div class="location-icon">🏐</div>
+                        <div class="location-info">
+                            <h4>Quadra de Vôlei Praia do Futuro</h4>
+                            <p>📍 Av. Zezé Diogo - Praia do Futuro</p>
+                            <span class="location-type">Quadra de Vôlei</span>
+                        </div>
+                    </div>
+                    
+                    <div class="location-card" data-type="campo">
+                        <div class="location-icon">🏃</div>
+                        <div class="location-info">
+                            <h4>Pista de Atletismo Cocó</h4>
+                            <p>📍 Parque do Cocó - Cocó</p>
+                            <span class="location-type">Pista de Atletismo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+    <footer class="app-footer">
+        <p>© 2025 Prefeitura Municipal de Fortaleza | Todos os direitos reservados.</p>
+        <p>Secretaria Municipal de Esporte e Lazer</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

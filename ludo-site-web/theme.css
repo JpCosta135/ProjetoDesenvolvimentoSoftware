@@ -1,0 +1,68 @@
+/* ===== Botão flutuante (páginas internas) ===== */
+.theme-floating {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+.theme-floating:hover { transform: translateY(-2px); }
+
+/* Botão do header (index) */
+#themeBtn { font-size: 1.2rem; line-height: 1; }
+
+/* ===== MODO ESCURO ===== */
+html.dark-theme {
+  color-scheme: dark;
+  --light-background: #0f172a;
+  --dark-text: #e2e8f0;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+html.dark-theme .theme-floating {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+/* --- index / style.css --- */
+html.dark-theme .app-header { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+html.dark-theme .stats-section,
+html.dark-theme .map-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+
+html.dark-theme .stat-card,
+html.dark-theme .info-card,
+html.dark-theme .location-card,
+html.dark-theme .modal-content,
+html.dark-theme .auth-card { background: #1e293b; }
+
+html.dark-theme .filter-btn:not(.active):not(:hover),
+html.dark-theme .map-filter-btn:not(.active):not(:hover) { background: #1e293b; }
+
+html.dark-theme .card-content p,
+html.dark-theme .map-section p,
+html.dark-theme .location-info p { color: #94a3b8; }
+
+html.dark-theme .app-footer { background: linear-gradient(135deg, #020617 0%, #0f172a 100%); }
+
+/* --- login / registro --- */
+html.dark-theme .auth-form input { background: #0f172a; color: #e2e8f0; border-color: #334155; }
+
+/* --- eventos --- */
+html.dark-theme .evento-card { background: #1e293b; }
+html.dark-theme .evento-titulo { color: #7cb7f5; }
+html.dark-theme .evento-descricao { color: #cbd5e1; }
+html.dark-theme .evento-local { color: #94a3b8; }
+
+/* --- comunidade --- */
+html.dark-theme .login-prompt,
+html.dark-theme .add-team-section,
+html.dark-theme .teams-section { background: #1e293b; }
+html.dark-theme .player-item { background: #0f172a; }
+html.dark-theme .filter-buttons .filter-btn:not(.active):not(:hover) { background: #1e293b; color: #e2e8f0; }

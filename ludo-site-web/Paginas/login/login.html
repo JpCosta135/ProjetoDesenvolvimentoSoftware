@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../Asset/logos/logo.ico" type="image/x-icon">
+    <title>Login - Sistema Esportivo</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../theme.css">
+    <script src="../../theme.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <img src="../../Asset/logos/name-ludo-100.png" alt="Logo">
+            <h2>Login</h2>
+            <form class="auth-form" onsubmit="handleLogin(event)">
+                <input type="email" id="loginEmail" placeholder="E-mail" required>
+                <input type="text" id="loginCpf" placeholder="CPF" required>
+                <button type="submit">Entrar</button>
+                <p class="auth-help">Não tem conta? <a href="../registro/registro.html">Cadastre-se aqui</a></p>
+                <p class="auth-help"><a href="../../index.html">← Voltar ao início</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
